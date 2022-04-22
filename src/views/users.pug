@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  h2 data list
+  each item in items
+    .card.mb-2
+      .card-body 
+        .card-title 
+          h3 id: #{item.id}
+        form(action=`/users/update/${item.id}`, method="post")
+          .form-group
+            .input-group.mb-1
+              label.col-form-label name
+              input.form-control(type="text" name="name" placeholder="name" value=item.name)
+            .input-group.mb-1
+              label.col-form-label email
+              input.form-control(type="text" name="email" placeholder="email" value=item.email)
+            .input-group.mb-1
+              label.col-form-label emailVarifiedAt
+              input.form-control(type="text" name="emailVarifiedAt" placeholder="emailVarifiedAt" value=item.emailVarifiedAt)
+            input.btn.btn-primary.btn-sm(type="submit" value="更新")
+            button.btn.btn-danger.btn-sm(formaction=`users/delete/${item.id}`, formmethod="post") 削除

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Noodele 
+  h2 みんなのnode.jsクソコードまとめ
+    .d-flex.justify-content-center
+      .card 
+        .card-title
+          h3 ユーザー一覧（テスト用機能）
+        .card-body
+          a(href="/users") ユーザー一覧（/users）
+      .card 
+        .card-title
+          h3 アカウント作成画面
+        .card-subtitle 
+          h4 メールアドレスによる認証付きのアカウント作成を行います。
+        .card-body
+          p ※パスワードは暗号化を行い保存しております。
+          br
+          a(href="/account/new") アカウント作成（/account/new）
+      .card 
+        .card-title
+          h3 クソコード一覧
+        .card-subtitle 
+          h4 必須ログインです。先にアカウントを作成してください。
+        .card-body
+          p ※ログイン時の「ユーザー名」はメールアドレスです。
+          br
+          a(href="/auth/topics") トピック一覧（/topics）
